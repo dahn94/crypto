@@ -13,19 +13,28 @@ def main(stdscr):
         if response.status_code == 200:
             data = response.text
             parsed = json.loads(data)
-            btc_price = parsed['BTC']['USD']
-            eth_price = parsed['ETH']['USD']
-            ltc_price = parsed['LTC']['USD']
+            try:
+                btc_price = parsed['BTC']['USD']
+                eth_price = parsed['ETH']['USD']
+                ltc_price = parsed['LTC']['USD']
 
-            stdscr.clear()
-            stdscr.addstr(1, 0, f'# BTCUSD: {btc_price} \n# ETHUSD: {eth_price} \n# LTCUSD: {ltc_price}')
-            stdscr.addstr(5, 0, 'Taxa de atualização: 10 s')
-            stdscr.addstr(7, 0, 'Pressione CTRL + C para sair.')
-            stdscr.refresh()
-            time.sleep(10)
+                stdscr.clear()
+                stdscr.addstr(1, 0, f'# BTCUSD: {btc_price} \n# ETHUSD: {eth_price} \n# LTCUSD: {ltc_price}')
+                stdscr.addstr(5, 0, 'Taxa de atualização: 10 s')
+                stdscr.addstr(7, 0, 'Pressione CTRL+C para sair.')
+                stdscr.refresh()
+                time.sleep(10)
+            except KeyError:
+                stdscr.clear()
+                stdscr.addstr(1, 0, 'Oops... Sinto muito. Não foi possível realizar a conexão, contate o admnistrador do sistema.')
+                stdscr.refresh()
+                time.sleep(10)
 
         else:
-            print('Sem conexão')
+            stdscr.clear()
+            stdscr.addstr(1, 0, 'Oops... Sinto muito. Não foi possível realizar a conexão, contate o admnistrador do sistema.')
+            stdscr.refresh()
+            time.sleep(10)
 
 
 curses.wrapper(main)
