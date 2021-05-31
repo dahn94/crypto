@@ -11,14 +11,8 @@ CLI app que retorna a cotação (em Dólar) do BTCUSD, ETHUSD e LTCUSD com taxa 
 python3 main.py
 ```
 
-<h2> 2. Demo </h2>
+<h2> 2. Demo (acesso via ssh) </h2>
 
-2.1 Via web
 ```
-https://tmate.io/t/ro-gGVkUC5EcyaLFEM9z5HsVXZz3
-```
-
-2.2 Via ssh
-```
-ssh ro-gGVkUC5EcyaLFEM9z5HsVXZz3@nyc1.tmate.io
+ssh ro-v2svxReHPKFSRd8saMT9tBy2B@nyc1.tmate.io
 ```
