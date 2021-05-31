@@ -20,7 +20,7 @@ def main(stdscr):
 
                 stdscr.clear()
                 stdscr.addstr(0, 0, 'MRBIT Terminal')
-                stdscr.addstr(2, 0, f'# BTCUSD: {btc_price} \n# ETHUSD: {eth_price} \n# LTCUSD: {ltc_price}')
+                stdscr.addstr(2, 0, f'# BTCUSD: $ {btc_price} \n# ETHUSD: $ {eth_price} \n# LTCUSD: $ {ltc_price}')
                 stdscr.addstr(5, 0, 'Taxa de atualização: 10 s')
                 stdscr.addstr(7, 0, 'Pressione CTRL+C para sair.')
                 stdscr.refresh()
